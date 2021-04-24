@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI_engine Documentation</title>
+
+  <link rel="stylesheet" href="site_style.css">
+
+</head>
+<body>
+    <div class="_titleBackground">
+
+      <img src="./WebsiteLogo.png"  class="_title">
+
+      <div class= "_subTitle">Documentation</div>
+
+    </div>
+
+    <img src="./additionalImages/UIIcon.png" style="all: initial;position: absolute;top:93px;left: 15px; width: 25px;">
+    <img src="./additionalImages/UI_FrameIcon.png" style="all: initial;position: absolute;top:127px;left: 15px; width: 25px;">
+    <img src="./additionalImages/UI_TextIcon.png" style="all: initial;position: absolute;top:160px;left: 15px; width: 25px;">
+    <img src="./additionalImages/UI_ImageIcon.png" style="all: initial;position: absolute;top:197px;left: 15px; width: 25px;">
+    <img src="./additionalImages/UI_WindowIcon.png" style="all: initial;position: absolute;top:230px;left: 15px; width: 25px;">
+    <img src="./additionalImages/UI_CollectionIcon.png" style="all: initial;position: absolute;top:263px;left: 15px; width: 25px;">
+
+    <ul class="contentList">
+      <input class="visually-hidden" type="checkbox" id="uiToggle">
+      <input class="visually-hidden" type="checkbox" id="uiFrameToggle">
+      <input class="visually-hidden" type="checkbox" id="uiTextToggle">
+      <input class="visually-hidden" type="checkbox" id="uiImageToggle">
+      <input class="visually-hidden" type="checkbox" id="uiWindowToggle">
+      <input class="visually-hidden" type="checkbox" id="uiCollectionToggle">
+
+      <li class="docContentList">
+        <label for="uiToggle" class="listName" id="_UI">UI<br></label>
+
+        <ul class="docDescription">
+
+          <li class="hideElement upperText">
+            Description
+            <li class="hideElement textDescriptor">This is the base class of all UI derived elements 
+              <br> <div style="position:relative;left:10px;font-size: 11px;color: grey;">Note: you can use this for rendering but it wont render anything</div></li>
+          </li>
+
+          <li class="hideElement upperText">
+            Use
+            <li class="hideElement textDescriptor">This class was meant to be used for derived classes</li>
+          </li>
+
+          <li class="hideElement upperText">
+            Example
+            <pre class="hideElement _code">
+  #include "SDL.h"
+  #include "SDL_Image.h"
+  #include "SDL_ttf.h"
+  #include "UI_engine.h"
+
+  using namespace UI_engine;
+
+  <span class="variable">int</span> main(int argc, char* argv[]) {
+    <span class="variable">UI_window</span> window("exampleWindow",
+      SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,   
+      400, 400, SDL_WINDOW_SHOWN, SDL_RENDERER_ACCELERATED,
+      144.0);
+      
+    <span class="variable">UI</span> example();
+    
+    window.add(&example);
+    processEvents(&window);
+    return 0;
+  }
+            </pre>
+          </li>
+
+          <li class="hideElement upperText">
+            Functions
+            <li class="hideElement" style="position:relative;left:20px;font-size: 22px;color:rgb(53, 53, 53);">public</li>
+
+            <li class="hideElement"><span class="functionText">constructor<span class="parameters">()</span> </span></li>
+            <li class="hideElement"><span class="functionText">destructor<span class="parameters">()</span> </span></li>
+
+            <li class="hideElement"><span class="variable">float</span><span class="functionText"> width<span class="parameters">() </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the width of the UI_element</li>
+            </li>
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> width<span class="parameters">(<span class="variable">float</span> w) </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the width of the UI_element based on <span class="variable">w</span></li>
+            </li>
+            <li class="hideElement"><span class="variable">float</span><span class="functionText"> height<span class="parameters">()</span> </span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the height of the UI_element</li>
+            </li>
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> height<span class="parameters">(<span class="variable">float</span> h) </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the height of the UI_element based on <span class="variable">h</span></li>
+            </li>
+            <li class="hideElement"><span class="variable">float</span><span class="functionText"> transparency<span class="parameters">()</span> </span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the height of the UI_element</li>
+            </li>
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> transparency<span class="parameters">(<span class="variable">float</span> t) </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the transparency of the UI_element based on <span class="variable">t</span></li>
+            </li>
+            <li class="hideElement"><span class="variable">float</span><span class="functionText"> x<span class="parameters">()</span> </span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the x value of the UI_element</span></li>
+            </li>
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> x<span class="parameters">(<span class="variable">float</span> x) </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the x value of the UI_element based on <span class="variable">x</span></li>
+            </li>
+            <li class="hideElement"><span class="variable">float</span><span class="functionText"> y<span class="parameters">()</span> </span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the y value of the UI_element</li>
+            </li>
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> y<span class="parameters">(<span class="variable">float</span> y) </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the y value of the UI_element based on <span class="variable">y</span></li>
+            </li>
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> show<span class="parameters">() </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">makes the UI_element visible</li>
+            </li>
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> hide<span class="parameters">() </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">makes the UI_element invisible</li>
+            </li>
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> render<span class="parameters">() </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">renders the UI_element</li>
+            </li>
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> destroy<span class="parameters">() </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">destroys the UI_element</li>
+            </li>
+            <li class="hideElement"><span class="variable">float</span><span class="functionText"> getParentPosX<span class="parameters">() </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the actual position of the UI_element on the window</li>
+            </li>
+            <li class="hideElement"><span class="variable">float</span><span class="functionText"> getParentPosY<span class="parameters">() </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the actual position of the UI_element on the window</li>
+            </li>
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> toggleEvents<span class="parameters">() </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">activates/deactivates events on that specific UI_element</li>
+            </li>
+            
+            <li class="hideElement" style="position:relative;left:20px;font-size: 22px;color:rgb(53, 53, 53);">private</li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> execute_event<span class="parameters">(<span class="variable">UI_Window*</span> _window,<span class="variable">const SDL_Event&</span> _event) </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">goes thru some event types and calls the function connected to that event</li>
+            </li>
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> init<span class="parameters">() </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">initializes the base rectangle of the UI_element since the constructor will be overwritten</li>
+            </li>
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> finit<span class="parameters">() </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">deletes the base rectangle of the UI_element since the destructor will be overwritten</li>
+            </li>
+          </li>
+
+          <li class="hideElement upperText">
+            Events
+            <li class="hideElement"><span class="variable">UI_event</span><span style="font-size: 17px;"> definition: </span><span class="variable">typedef</span><span class="functionText"> std::function<span><<span class="parameters">void(UI_eventData)</span></span>></span> <span class="variable">UI_event</span></li>
+            <li class="hideElement"><span class="variable">UI_eventData</span><span style="font-size: 17px;"> definition:</span>
+              <pre class="hideElement" style="position: relative;font-family: Helvetica, sans-serif;font-size: 19px;">
+   struct <span class="variable">UI_eventData</span> {
+    <span class="variable">UI_window*</span> w;<span style="color: rgb(78, 136, 21); font-size: 14px;">//the window that is being passed</span>
+    <span class="variable">const SDL_Event&</span> e;<span style="color: rgb(78, 136, 21); font-size: 14px;">//the SDL_Event that is being passed</span>
+  };
+              </pre>
+            </li>
+            <pre class="hideElement" style="position: relative;font-family: Helvetica, sans-serif;font-size: 19px;">  <span class="variable">UI_event</span> onMousePress;
+  <span class="variable">UI_event</span> onMouseRelease;
+  <span class="variable">UI_event</span> onMouseMove;
+  <span class="variable">UI_event</span> onKeyPress;
+  <span class="variable">UI_event</span> onKeyRelease;
+  <span class="variable">UI_event</span> onScroll;</pre>
+          </li>
+
+          <li class="hideElement upperText">
+            Elements
+            <pre class="hideElement" style="position: relative;font-family: Helvetica, sans-serif;font-size: 19px;">
+  <span class="variable">bool</span> used = false; <span style="color: rgb(78, 136, 21); font-size: 14px;">//when the UI_element is added to a window turns true</span>
+  <span class="variable">bool</span> isVisible = true; <span style="color: rgb(78, 136, 21); font-size: 14px;">//variable for UI_element visibility</span>
+  <span class="variable">bool</span> getsEvents = false; <span style="color: rgb(78, 136, 21); font-size: 14px;">//based on the value events will or will not be executed</span>
+  <span class="variable">SDL_FRect*</span> interface; <span style="color: rgb(78, 136, 21); font-size: 14px;">//the pozition and dimensions of the UI_element as floats</span>
+  <span class="variable">float</span> transparencyVal = 0.0f; <span style="color: rgb(78, 136, 21); font-size: 14px;">//the transparency of the UI_element 0-invisible 1-visible</span>
+  <span class="variable">UI*</span> parent = NULL; <span style="color: rgb(78, 136, 21); font-size: 14px;">//pointer to the parent of this UI_element</span>
+            </pre>
+          </li>
+        </ul>
+
+      </li>
+      <li class="docContentList">
+
+        <label for="uiFrameToggle" class="listName"id="_UI_Frame">UI_frame<br></label>
+
+        <ul class="docDescription">
+          <li class="hideElement upperText">
+            Description
+            <li class="hideElement textDescriptor">
+              Something that creates a filled/not filled rectangle based on the coordinates and dimensions given
+              <br> <div style="position:relative;left:10px;font-size: 11px;color: grey;">Note: Since this is a derived class of UI check the UI documentation</div>
+            </li>
+          </li>
+
+          <li class="hideElement upperText">
+            Example
+            <pre class="hideElement _code">
+  #include "SDL.h"
+  #include "SDL_Image.h"
+  #include "SDL_ttf.h"
+  #include "UI_engine.h"
+
+  using namespace UI_engine;
+
+  <span class="variable">int</span> main(int argc, char* argv[]) {
+    <span class="variable">UI_window</span> window("exampleWindow",
+      SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,   
+      400, 400, SDL_WINDOW_SHOWN, SDL_RENDERER_ACCELERATED,
+      144.0);
+      
+    <span class="variable">UI_frame</span> frame_example(0.0f,0.0f,35.0f,35.0f,1.0f,{0,0,0,255});
+    frame_example.filled();
+
+    window.add(&frame_example);
+    processEvents(&window);
+    return 0;
+  }
+              </pre>
+          </li>
+
+          <li class="hideElement upperText">
+            Functions
+            <li class="hideElement" style="position:relative;left:20px;font-size: 22px;color:rgb(53, 53, 53);">public</li>
+            <li class="hideElement"><span class="functionText">constructor<span class="parameters">(float x,float y,float w,float h,float t,
+              SDL_Color color)</span> </span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">creates a new UI_frame element of wich position is defined by <span class="variable">x</span>,<span class="variable">y</span>,dimensions by <span class="variable">w</span> and <span class="variable">h</span>,transparency by <span class="variable">t</span> and frame color by <span class="variable">color</span></li>
+            </li>
+            <li class="hideElement"><span class="functionText">destructor<span class="parameters">()</span> </span></li>
+
+            <li class="hideElement"><span class="variable">SDL_Color</span><span class="functionText"> color<span class="parameters">() </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the color of the frame</li>
+            </li>
+            
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> color<span class="parameters">(SDL_Color c) </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the color of the frame</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> filled<span class="parameters">() </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the frame to render as a filled colored rectangle</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> unfilled<span class="parameters">() </span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the frame to render as a empty rectangle with colored margins</li>
+            </li>
+          </li>
+
+          <li class="hideElement upperText">
+            Elements
+            <pre class="hideElement" style="position: relative;font-family: Helvetica, sans-serif;font-size: 19px;">
+  <span class="variable">SDL_Color*</span> frameColor;<span style="color: rgb(78, 136, 21); font-size: 14px;">//color of the frame</span>
+
+  <span class="variable">bool</span> frameFilled = true;<span style="color: rgb(78, 136, 21); font-size: 14px;">//if true the element will be rendered as a filled rectangle</span>
+
+  <span class="variable">void</span>(*renderMode[2])(<span class="variable">SDL_Renderer&</span>, <span class="variable">const SDL_FRect&</span>) = {<span style="color: rgb(78, 136, 21); font-size: 14px;">//two functions stored as a function vector for rendering</span>
+    [](<span class="variable">SDL_Renderer&</span> u_renderer,<span class="variable">const SDL_FRect&</span> u_rect) {
+      SDL_RenderDrawRectF(&u_renderer, &u_rect);
+    },
+    [](<span class="variable">SDL_Renderer&</span> u_renderer,<span class="variable">const SDL_FRect&</span> u_rect) {
+      SDL_RenderFillRectF(&u_renderer, &u_rect);
+    }
+  };
+            </pre>
+          </li>
+
+        </ul>
+
+      </li>
+      <li class="docContentList">
+
+        <label for="uiTextToggle" class="listName" id="_UI_Text">UI_text<br></label>
+        
+        <ul class="docDescription">
+          <li class="hideElement upperText">
+            Description
+            <li class="hideElement textDescriptor">
+              An element used to render characters and only characters
+              <br> <div style="position:relative;left:10px;font-size: 11px;color: grey;">Note: Since this is a derived class of UI check the UI documentation</div>
+            </li>
+          </li>
+
+          <li class="hideElement upperText">
+            Example
+            <pre class="hideElement _code">
+  #include "SDL.h"
+  #include "SDL_Image.h"
+  #include "SDL_ttf.h"
+  #include "UI_engine.h"
+
+  using namespace UI_engine;
+
+  <span class="variable">int</span> main(int argc, char* argv[]) {
+    <span class="variable">UI_window</span> window("exampleWindow",
+      SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,   
+      400, 400, SDL_WINDOW_SHOWN, SDL_RENDERER_ACCELERATED,
+      144.0);
+      
+    <span class="variable">UI_text</span> text_example(0.0f,0.0f,1.0f,"Here is some text");
+
+    window.add(&text_example);
+    processEvents(&window);
+    return 0;
+  }
+            </pre>
+          </li>
+
+          <li class="hideElement upperText">
+            Functions
+
+            <li class="hideElement" style="position:relative;left:20px;font-size: 22px;color:rgb(53, 53, 53);">public</li>
+
+            <li class="hideElement"><span class="functionText">constructor<span class="parameters">(float x,float y,float t,std::string text)</span> </span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">creates a new UI_text element of wich positions are defined by <span class="variable">x</span>,<span class="variable">y</span>,transparency by <span class="variable">t</span> and the text by <span class="variable">text</span>
+                <br> <div style="position:relative;left:10px;font-size: 11px;color: grey;">Note: dimensions are set automatically after creating the text texture</div>
+              </li>
+            </li>
+
+            <li class="hideElement"><span class="functionText">destructor<span class="parameters">()</span> </span></li>
+
+            <li class="hideElement"><span class="variable">std::string</span><span class="functionText"> text<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the text of the element</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> text<span class="parameters">(std::string text)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the text of the element</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> text<span class="parameters">(std::string text)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the text of the element</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> setRenderSection<span class="parameters"> (int x, int y, int w, int h)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the "render section" of the element
+                <br> <div style="position:relative;left:10px;font-size: 11px;color: grey;">Note: by render section is meant the section that will be rendered by the UI_window since the text is a texture</div>
+              </li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> setRenderSectionFull<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the "render section" of the element to be the entire text</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">SDL_Rect*</span><span class="functionText"> getRenderSection<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the "render section" of the element</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> color<span class="parameters">(SDL_Color _color)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the color of the text</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">SDL_Color*</span><span class="functionText"> color<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the color of the text</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> font<span class="parameters">(const char* _path, int _size)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the font of the text according to the .ttf file from the _path and _size
+                <br> <div style="position:relative;left:10px;font-size: 11px;color: grey;">Note: Use as _path the location of the windows fonts folder instead of a local one</div>
+              </li>
+            </li>
+
+            <li class="hideElement"><span class="variable">TTF_Font*</span><span class="functionText"> font<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the font of the text</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">SDL_Texture*</span><span class="functionText"> source<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the texture of the text</li>
+            </li>
+          </li>
+
+          <li class="hideElement upperText">
+            Elements
+            <pre class="hideElement" style="position: relative;font-family: Helvetica, sans-serif;font-size: 19px;">
+  <span class="variable">SDL_Texture*</span> textTexture;<span style="color: rgb(78, 136, 21); font-size: 14px;">//texture of the text</span>
+  <span class="variable">TTF_Font*</span> textFont;<span style="color: rgb(78, 136, 21); font-size: 14px;">//font of the text</span>
+  <span class="variable">SDL_Rect*</span> renderSection;<span style="color: rgb(78, 136, 21); font-size: 14px;">//section that is rendered inside of the textTexture</span>
+  <span class="variable">std::string</span> _text;<span style="color: rgb(78, 136, 21); font-size: 14px;">//the actual text</span>
+  <span class="variable">int</span> textSize;<span style="color: rgb(78, 136, 21); font-size: 14px;">//size of the text</span>
+  <span class="variable">SDL_Color*</span> textColor;<span style="color: rgb(78, 136, 21); font-size: 14px;">//color of the text</span>
+            </pre>
+          </li>
+        </ul>
+
+      </li>
+      <li class="docContentList">
+
+        <label for="uiImageToggle" class="listName" id="_UI_Image">UI_image<br></label>
+
+        <ul class="docDescription">
+          <li class="hideElement upperText">
+            Description
+            <li class="hideElement textDescriptor">
+              just an image, nothing more
+              <br> <div style="position:relative;left:10px;font-size: 11px;color: grey;">Note: Since this is a derived class of UI check the UI documentation</div>
+            </li>
+          </li>
+
+          <li class="hideElement upperText">
+            Example
+            <pre class="hideElement _code">
+  #include "SDL.h"
+  #include "SDL_Image.h"
+  #include "SDL_ttf.h"
+  #include "UI_engine.h"
+
+  using namespace UI_engine;
+
+  <span class="variable">int</span> main(int argc, char* argv[]) {
+    <span class="variable">UI_window</span> window("exampleWindow",
+      SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,   
+      400, 400, SDL_WINDOW_SHOWN, SDL_RENDERER_ACCELERATED,
+      144.0);
+      
+    <span class="variable">SDL_Surface*</span> image_surface=IMG_Load("image/location.png")
+    <span class="variable">UI_image</span> image_example(0.0f,0.0f,image_surface.w,image_surface.h,1.0f);
+    image_example.source(image_surface);
+    image_example.setRenderSectionFull();
+
+    window.add(&image_example);
+    processEvents(&window);
+    return 0;
+  }
+              </pre>
+          </li>
+
+          <li class="hideElement upperText">
+            Functions
+            <li class="hideElement" style="position:relative;left:20px;font-size: 22px;color:rgb(53, 53, 53);">public</li>
+
+            <li class="hideElement"><span class="functionText">constructor<span class="parameters">(float x,float y,float w,float h,float t)</span> </span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">creates a new UI_text element of wich positions are defined by <span class="variable">x</span>,<span class="variable">y</span>,dimensions <span class="variable">w</span>,<span class="variable">h</span> and by transparency by <span class="variable">t</span>
+                <br> <div style="position:relative;left:10px;font-size: 11px;color: grey;">Note: you need to use the source(..) function to actually give this element an image and check the UI documentation</div>
+              </li>
+            </li>
+
+            <li class="hideElement"><span class="functionText">destructor<span class="parameters">()</span> </span></li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> source<span class="parameters">(SDL_Texture* _imageTexture)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the imageTexture to _imageTexture</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> source<span class="parameters">(SDL_Surface* _imageSurface)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">converts the surface to a texture and sets the imageTexture to the optimized version of _imageSurface</li>
+            </li>
+            
+            <li class="hideElement"><span class="variable">SDL_Texture*</span><span class="functionText"> source<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the imageTexture</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> setRenderSection<span class="parameters"> (int x, int y, int w, int h)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the "render section" of the element
+                <br> <div style="position:relative;left:10px;font-size: 11px;color: grey;">Note: by render section is meant the section that will be rendered by the UI_window since the text is a texture</div>
+              </li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> setRenderSectionFull<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the "render section" of the element to be the entire text</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">SDL_Rect*</span><span class="functionText"> getRenderSection<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the "render section" of the element</li>
+            </li>
+
+            </li>
+
+          </li>
+
+          <li class="hideElement upperText">
+            Elements
+            <pre class="hideElement" style="position: relative;font-family: Helvetica, sans-serif;font-size: 19px;">
+  <span class="variable">SDL_Texture</span> *image;<span style="color: rgb(78, 136, 21); font-size: 14px;">//the image as a texture</span>
+  <span class="variable">SDL_Rect*</span> renderSection;<span style="color: rgb(78, 136, 21); font-size: 14px;">//section that is rendered inside of the textTexture</span>
+              </pre>
+          </li>
+        </ul>
+
+      </li>
+      <li class="docContentList">
+
+        <label for="uiWindowToggle" class="listName" id="_UI_Window">UI_window<br></label>
+
+        <ul class="docDescription">
+          <li class="hideElement upperText">
+            Description
+            <li class="hideElement textDescriptor">
+              A window used to render UI_elements(it can do a lot of things(no joke))
+              <br> <div style="position:relative;left:10px;font-size: 11px;color: grey;">Note: you can make only a window and it runs in a single thread so think about it</div>
+            </li>
+          </li>
+
+          <li class="hideElement upperText">
+            Example
+
+            <pre class="hideElement _code">
+  #include "SDL.h"
+  #include "SDL_Image.h"
+  #include "SDL_ttf.h"
+  #include "UI_engine.h"
+
+  using namespace UI_engine;
+
+  <span class="variable">int</span> main(int argc, char* argv[]) {
+    <span class="variable">UI_window</span> window("exampleWindow",
+      SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,   
+      400, 400, SDL_WINDOW_SHOWN, SDL_RENDERER_ACCELERATED,
+      144.0);
+
+    processEvents(&window);<span style="color: rgb(78, 136, 21); font-size: 14px;">//remember to use this function to actually make your window render things</span>
+    return 0;
+  }
+              </pre>
+
+          </li>
+          <li class="hideElement upperText">
+            Necessary function
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> processEvents<span class="parameters">(UI_window* uiWindow)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">binds the window that you created in the main() function to actually render and process events</li>
+            </li>
+          </li>
+          <li class="hideElement upperText">
+            Functions
+            <li class="hideElement" style="position:relative;left:20px;font-size: 22px;color:rgb(53, 53, 53);">public</li>
+            
+            <li class="hideElement"><span class="functionText">constructor<span class="parameters">(std::string name,int x,int y,int w,int h,Uint32 windowFlags,Uint32 rendererFlags,double framerateCap)</span> </span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">creates a new UI_window of wich positions are defined by <span class="variable">x</span>,<span class="variable">y</span>,dimensions <span class="variable">w</span>,<span class="variable">h</span> SDL_Window settings by <span class="variable">windowFlags</span>,<br>SDL_Renderer settings by <span class="variable">rendererFlags</span> and finally the limit of frames that the window will have set by <span class="variable">framerateCap</span>
+                <br> <div style="position:relative;left:10px;font-size: 11px;color: grey;">Note: you can have only one UI_window</div>
+              </li>
+            </li>
+
+            <li class="hideElement"><span class="functionText">destructor<span class="parameters">()</span> </span></li>
+
+            <li class="hideElement"><span class="variable">int</span><span class="functionText"> width<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the width of the window</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void/span><span class="functionText"> width<span class="parameters">(int w)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the width of the window</li>
+            </li>
+            
+            <li class="hideElement"><span class="variable">int</span><span class="functionText"> height<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the height of the window</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> height<span class="parameters">(int h)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the height of the window</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">int</span><span class="functionText"> x<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the x value of the window</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> x<span class="parameters">(int x)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the x value of the window</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">int</span><span class="functionText"> y<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the y value of the window</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> y<span class="parameters">(int y)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the y value of the window</li>
+            </li>
+            
+            <li class="hideElement"><span class="variable">float</span><span class="functionText"> transparency<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the transparency of the window</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> transparency<span class="parameters">(float t)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the transparency of the window</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">SDL_Color</span><span class="functionText"> background<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the background-color of the window</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> background<span class="parameters">(SDL_Color c)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the background-color of the window</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">UI*</span><span class="functionText"> object<span class="parameters">(std::string name)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the corresponding UI element based on the name
+                <br> <div style="position:relative;left:10px;font-size: 11px;color: grey;">Note: you can cast this element to get default or custom derived classes stored</div>
+              </li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> addWithCustomName<span class="parameters">(std::string name,UI* ui)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">stores the UI_element given with a specific name so you can get it later with object(name)</li>
+            </li>
+
+            <li class="hideElement"><span class="variable" style="color: rgb(80, 10, 129);">macro</span><span class="functionText"> add<span class="parameters">(UI* ui)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">stores the UI_element given with the name of the object</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> render<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">renders the object and processes the internal events</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> status<span class="parameters">(_status to_set)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">sets the status of the window, you can set it to stopped/paused/active</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">_status</span><span class="functionText"> status<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the current status of the window</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> addEvent<span class="parameters">(std::function<void(UI_window*)> _event)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">adds an event that can modify things inside the UI_window including the UI_window
+                <br> <div style="position:relative;left:10px;font-size: 11px;color: grey;">Note: you can make events that check specific things or wait for something since the UI_window executes only the currently stored events not the added ones per frame</div>
+              </li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> stop<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">stops the window and clears everything</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">void</span><span class="functionText"> execute_sdlEvents<span class="parameters">(const SDL_Event& e)</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">gets the obtained sdl events and passes them to evey subelement</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">double</span><span class="functionText"> framerate<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the current framerate</li>
+            </li>
+
+            <li class="hideElement"><span class="variable">double</span><span class="functionText"> deltaTime<span class="parameters">()</span></span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">returns the time between frames</li>
+            </li>
+
+          </li>
+
+          <li class="hideElement upperText">
+            Elements
+            <pre class="hideElement" style="position: relative;font-family: Helvetica, sans-serif;font-size: 19px;">
+  <span class="variable">unsigned int</span> a = SDL_GetTicks();<span style="color: rgb(78, 136, 21); font-size: 14px;">//values for framerate</span>
+	<span class="variable">unsigned int</span> b = SDL_GetTicks();
+	<span class="variable">double</span> delta = 0.0;<span style="color: rgb(78, 136, 21); font-size: 14px;">//deltaTime value</span>
+
+	<span class="variable">double</span> _framerate = 0.0;<span style="color: rgb(78, 136, 21); font-size: 14px;">//fps</span>
+	<span class="variable">double</span> fpsCap;<span style="color: rgb(78, 136, 21); font-size: 14px;">//fps limit</span>
+
+	<span class="variable">_status</span> windowActivity = undefined; <span style="color: rgb(78, 136, 21); font-size: 14px;">//status of the current window</span>
+	<span class="variable">SDL_Rect*</span> windowInterface;  <span style="color: rgb(78, 136, 21); font-size: 14px;">//window sizes</span>
+	<span class="variable">float</span> transparencyVal = 0.0f; <span style="color: rgb(78, 136, 21); font-size: 14px;">//transparency</span>
+	<span class="variable">SDL_Color</span> backgroundColor = { 255,255,255,255 };
+	<span class="variable">UI_EventList*</span> events = NULL; <span style="color: rgb(78, 136, 21); font-size: 14px;">//deque of events to execute</span>
+            </pre>
+          </li>
+        </ul>
+
+      </li>
+      <li class="docContentList">
+
+        <label for="uiCollectionToggle" class="listName" id="_UI_Collection">UI_collection<br></label>
+
+        <ul class="docDescription">
+          <li class="hideElement upperText">
+            Description
+            <li class="hideElement textDescriptor">
+              Stores UI_objects and groups them into a single UI_object for a better control
+              <br> <div style="position:relative;left:10px;font-size: 11px;color: grey;">Note: Since this is a derived class of UI check the UI documentation</div>
+            </li>
+          </li>
+
+          <li class="hideElement upperText">
+            Example
+            <pre class="hideElement _code">
+  #include "SDL.h"
+  #include "SDL_Image.h"
+  #include "SDL_ttf.h"
+  #include "UI_engine.h"
+
+  using namespace UI_engine;
+
+  <span class="variable">int</span> main(int argc, char* argv[]) {
+    <span class="variable">UI_window</span> window("exampleWindow",
+      SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,   
+      400, 400, SDL_WINDOW_SHOWN, SDL_RENDERER_ACCELERATED,
+      144.0);
+
+    <span class="variable">UI_collection</span> collection_example(35.0f,60.0f,1.0f);
+
+    <span class="variable">UI_text</span> some_text(0.0f,0.0f,1.0f,"Here is the text");
+
+    collection_example.add(&some_text);
+    window.add(&collection_example);
+
+    processEvents(&window);
+    return 0;
+  }
+              </pre>
+          </li>
+
+          <li class="hideElement upperText">
+            Functions
+
+            <li class="hideElement" style="position:relative;left:20px;font-size: 22px;color:rgb(53, 53, 53);">public</li>
+            
+            <li class="hideElement"><span class="functionText">constructor<span class="parameters">(float x,float y,float t)</span> </span>
+              <li class="hideElement upperText" style="position: relative;left: 30px;">creates a new UI_collection of wich positions are defined by <span class="variable">x</span>,<span class="variable">y</span> and transparency by <span class="variable">t</span>
+              </li>
+            </li>
+
+            <li class="hideElement"><span class="functionText">destructor<span class="parameters">()</span> </span></li>
+
+              <li class="hideElement"><span class="variable">void</span><span class="functionText"> increaseWidth<span class="parameters">(float percent)</span></span>
+                <li class="hideElement upperText" style="position: relative;left: 30px;">increases procentual the width of every child</li>
+              </li>
+
+              <li class="hideElement"><span class="variable">void</span><span class="functionText"> increaseHeight<span class="parameters">(float percent)</span></span>
+                <li class="hideElement upperText" style="position: relative;left: 30px;">increases procentual the height of every child</li>
+              </li>
+
+              <li class="hideElement"><span class="variable">UI*</span><span class="functionText"> object<span class="parameters">(std::string name)</span></span>
+                <li class="hideElement upperText" style="position: relative;left: 30px;">returns the according child with that name</li>
+              </li>
+
+              <li class="hideElement"><span class="variable">void</span><span class="functionText"> addWithCustomName<span class="parameters">(std::string name, UI* ui)</span></span>
+                <li class="hideElement upperText" style="position: relative;left: 30px;">adds the current ui object with the custom name</li>
+              </li>
+
+              <li class="hideElement"><span class="variable" style="color: rgb(80, 10, 129);">macro</span><span class="functionText"> add<span class="parameters">(UI* ui)</span></span>
+                <li class="hideElement upperText" style="position: relative;left: 30px;">stores the UI_element given with the name of the object</li>
+              </li>
+
+
+          </li>
+
+          <li class="hideElement upperText">
+            Elements
+            <pre class="hideElement" style="position: relative;font-family: Helvetica, sans-serif;font-size: 19px;">
+<span class="variable">UI_vectorRenderList*</span> Collection_itemOrder;<span style="color: rgb(78, 136, 21); font-size: 14px;">a std::vector that stores UI* objects</span>
+<span class="variable">UI_mapRenderList*</span> Collection_items;<span style="color: rgb(78, 136, 21); font-size: 14px;">a std::map that stores UI* objects</span>
+            </pre>
+          </li>
+        </ul>
+
+      </li>
+    </ul>
+</body>
+</html>

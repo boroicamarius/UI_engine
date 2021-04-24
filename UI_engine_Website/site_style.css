@@ -1,0 +1,338 @@
+
+
+._title{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    
+    width: 275px;
+    height: 73px;
+
+    color: rgb(29, 29, 29);
+    font-family: Helvetica, sans-serif;
+
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+}
+
+._subTitle{
+    position: absolute;
+    top:40px;
+    left: 160px;
+    font-size: 10px;
+    color: rgb(66, 66, 66);
+    font-family: Helvetica, sans-serif;
+
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+}
+
+._titleBackground{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    height: 73px;
+    background-color: rgb(243, 243, 243);
+}
+
+.contentList{
+    position: absolute;
+
+    top: 73px;
+    left: 0px;
+
+    font-family: Helvetica, sans-serif;
+    list-style-type: none;
+}
+
+.docContentList {
+    all: initial;
+
+    position: relative;
+    width:80px;
+    font-size: 30px;
+    font-family: Helvetica, sans-serif;
+}
+
+.hideElement{
+    display:none;
+}
+
+.docDescription{
+    position: absolute;
+    top:10px;
+    left:140px;
+    width:1100px;
+    overflow-y: auto;
+    overflow-x:hidden;
+}
+
+.listName{
+    font-family: Helvetica, sans-serif;
+}
+
+.upperText{
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+
+    -webkit-touch-callout: none; 
+        -webkit-user-select: none; 
+         -khtml-user-select: none; 
+           -moz-user-select: none; 
+            -ms-user-select: none; 
+                user-select: none; 
+}
+.textDescriptor{
+    font-family: Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -100vw;
+}
+
+
+#uiToggle:checked ~ .docContentList #_UI ~.docDescription .hideElement{
+    display: block;
+}
+
+#uiToggle:checked ~ .docContentList #_UI_Frame ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiToggle:checked ~ .docContentList #_UI_Text ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiToggle:checked ~ .docContentList #_UI_Image ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiToggle:checked ~ .docContentList #_UI_Window ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiToggle:checked ~ .docContentList #_UI_Collection ~.docDescription .hideElement{
+    display: none;
+}
+
+
+#uiFrameToggle:checked ~ .docContentList #_UI_Frame ~.docDescription .hideElement{
+    display: block;
+}
+
+#uiFrameToggle:checked ~ .docContentList #_UI ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiFrameToggle:checked ~ .docContentList #_UI_Image ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiFrameToggle:checked ~ .docContentList #_UI_Text ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiFrameToggle:checked ~ .docContentList #_UI_Window ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiFrameToggle:checked ~ .docContentList #_UI_Collection ~.docDescription .hideElement{
+    display: none;
+}
+
+
+#uiTextToggle:checked ~ .docContentList #_UI_Text ~.docDescription .hideElement{
+    display: block;
+}
+
+#uiTextToggle:checked ~ .docContentList #_UI_Image ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiTextToggle:checked ~ .docContentList #_UI_Frame ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiTextToggle:checked ~ .docContentList #_UI ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiTextToggle:checked ~ .docContentList #_UI_Window ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiTextToggle:checked ~ .docContentList #_UI_Collection ~.docDescription .hideElement{
+    display: none;
+}
+
+
+#uiImageToggle:checked ~ .docContentList #_UI_Image ~.docDescription .hideElement{
+    display: block;
+}
+
+#uiImageToggle:checked ~ .docContentList #_UI_Text ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiImageToggle:checked ~ .docContentList #_UI_Frame ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiImageToggle:checked ~ .docContentList #_UI ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiImageToggle:checked ~ .docContentList #_UI_Window ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiImageToggle:checked ~ .docContentList #_UI_Collection ~.docDescription .hideElement{
+    display: none;
+}
+
+
+#uiWindowToggle:checked ~ .docContentList #_UI_Window ~.docDescription .hideElement{
+    display: block;
+}
+
+#uiWindowToggle:checked ~ .docContentList #_UI_Text ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiWindowToggle:checked ~ .docContentList #_UI_Image ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiWindowToggle:checked ~ .docContentList #_UI_Frame ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiWindowToggle:checked ~ .docContentList #_UI ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiWindowToggle:checked ~ .docContentList #_UI_Collection ~.docDescription .hideElement{
+    display: none;
+}
+
+
+#uiCollectionToggle:checked ~ .docContentList #_UI_Collection ~.docDescription .hideElement{
+    display: block;
+}
+
+#uiCollectionToggle:checked ~ .docContentList #_UI_Window ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiCollectionToggle:checked ~ .docContentList #_UI_Text ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiCollectionToggle:checked ~ .docContentList #_UI_Image ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiCollectionToggle:checked ~ .docContentList #_UI_Frame ~.docDescription .hideElement{
+    display: none;
+}
+
+#uiCollectionToggle:checked ~ .docContentList #_UI ~.docDescription .hideElement{
+    display: none;
+}
+
+#_UI{
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+}
+
+#_UI_Frame{
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+}
+
+#_UI_Text{
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+}
+
+#_UI_Image{
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+}
+
+#_UI_Window{
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+}
+
+#_UI_Collection{
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+}
+
+.functionText{
+    border-radius: 25px;
+    background-color: rgba(77, 77, 77, 0.308);
+    color: rgb(56, 53, 53);
+    font-size: 19px;
+}
+
+.variable{
+    color: rgb(31, 35, 255);
+    font-size: 19px;
+}
+
+.parameters{
+    color: rgb(0, 0, 0);
+}
+
+._code{
+
+    -webkit-touch-callout: text; 
+    -webkit-user-select: text; 
+     -khtml-user-select: text; 
+       -moz-user-select: text; 
+        -ms-user-select: text; 
+            user-select: text; 
+
+    border-radius: 0px 25px 25px 0px;
+    background-color: rgba(77, 77, 77, 0.288);
+    color: rgb(56, 53, 53);
+    font-family: Helvetica, sans-serif;
+    font-size: 19px;
+}
