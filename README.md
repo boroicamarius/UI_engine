@@ -3,7 +3,7 @@ A simple to use engine for 2D user interface elements
 
 
 # UI_engine hello world example
-`cpp
+```cpp
 #include "SDL.h"
 #include "SDL_Image.h"
 #include "SDL_ttf.h"
@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
 	processEvents(&window);
 	return 0;
 }
-`
+```
 
 ## UI_engine Static Lib configuration(All configurations)
 ### configuration type: static library;
