@@ -51,7 +51,7 @@ int main(int argc, char* argv[]) {
 same as the UI_engine configuration except
 
 ### C/C++>Additional Include Directories:
-	path\to\UI_engine\(file that has every header/cpp file)
+	path\to\UI_engine\(file that has every header/cpp file) //you should add this line
 
 ### C/C++>Precompiled Headers:Not Using Precompiled headers
 
