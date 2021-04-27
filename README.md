@@ -63,6 +63,8 @@ same as the UI_engine configuration except
 ## final step
 right click on the main solution project, add>reference and select UI_engine
 
+After building the project add additional_SDL2_DLLs from the repository in your release/debug files 
+
 And You're done!
 
 have fun messing with it =)
