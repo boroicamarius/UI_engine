@@ -1,6 +1,11 @@
 # UI_engine
 A simple to use engine for 2D user interface elements
 
+# Documentation
+	[UI_engine Documentation](https://github.com/boroicamarius/UI_engine/tree/main#ui_engine-hello-world-example)
+	[Example](https://github.com/boroicamarius/UI_engine/tree/main#ui_engine-hello-world-example)
+# How-to-setup a UI_engine project
+	[configuration](https://github.com/boroicamarius/UI_engine/tree/main#ui_engine-static-lib-configurationall-configurations)
 
 # UI_engine hello world example
 ```cpp
