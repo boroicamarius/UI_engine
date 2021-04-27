@@ -1,9 +1,9 @@
 # UI_engine
 A simple to use engine for 2D user interface elements
 
-#UI_engine How-to
+## UI_engine How-to
   [yes]
-#UI_engine Static Lib configuration(All configurations)
+## UI_engine Static Lib configuration(All configurations)
 	configuration type: static library;
 
 	Librarian>Additional Library Directories:
@@ -20,7 +20,7 @@ A simple to use engine for 2D user interface elements
 		SDL2_ttf.lib
 		
 		
-#Main project configuration(All configurations)
+## Main project configuration(All configurations)
 	// \ same as the UI_engine configuration except
 	
 	C/C++>Additional Include Directories:
@@ -30,7 +30,7 @@ A simple to use engine for 2D user interface elements
 		path\to\SDL2_ttf\lib\x64
 		path\to\SDL2\lib\x64
 		
-#final step
+## final step
 right click on the main solution project, add>reference and select UI_engine
 
 And You're done!
