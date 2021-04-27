@@ -3,7 +3,7 @@ A simple to use engine for 2D user interface elements
 
 
 # UI_engine hello world example
-`C++ Example
+`cpp
 	#include "SDL.h"
 	#include "SDL_Image.h"
 	#include "SDL_ttf.h"
