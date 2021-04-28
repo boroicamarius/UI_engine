@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
 }
 ```
 
-## requiremens
+## Requirements
 
 latest VCredist_
 
