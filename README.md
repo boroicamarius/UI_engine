@@ -1,4 +1,4 @@
-# ![alt text](https://github.com/boroicamarius/UI_engine/blob/docs/WebsiteLogo.png?raw=true)
+# ![alt text](https://github.com/boroicamarius/UI_engine/blob/docs/WebsiteLogo.png)
 A simple to use engine for 2D user interface elements
 
 # Documentation
