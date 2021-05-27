@@ -1,6 +1,10 @@
 # ![UI_engine](https://github.com/boroicamarius/UI_engine/blob/main/docs/WebsiteLogo.png)
 A simple to use engine for 2D user interface elements
 
+# Updates
+
+	-fixed texture scaling for UI_text when changing text
+
 # Documentation
 [UI_engine Documentation](https://boroicamarius.github.io/UI_engine/UI_engine_Docs.html)
 
