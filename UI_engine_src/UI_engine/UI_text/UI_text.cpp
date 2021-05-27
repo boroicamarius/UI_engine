@@ -47,6 +47,8 @@ void UI_text::text(std::string text) {
 	SDL_DestroyTexture(textTexture);
 	textTexture = SDL_CreateTextureFromSurface(_renderer, textSurface);
 
+	interface->w = textSurface->w;
+	interface->h = textSurface->h;
 	transparency(transparencyVal);
 	SDL_FreeSurface(textSurface);
 };
