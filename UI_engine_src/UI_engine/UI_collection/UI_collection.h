@@ -34,8 +34,14 @@ public:
 	void increaseHeight(float percent); 
 
 	UI* object(std::string name);
-	UI* object(int number);
-	int objects();
+
+	UI* object(int number) {
+		return (*Collection_itemOrder)[number];
+	};
+
+	int objects() {
+		return (*Collection_itemOrder).size();
+	};
 
 	void addWithCustomName(std::string name, UI* ui) {
 		if (!ui->used) {

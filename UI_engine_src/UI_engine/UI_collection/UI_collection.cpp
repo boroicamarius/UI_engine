@@ -32,11 +32,3 @@ void UI_collection::increaseHeight(float percent) {
 UI* UI_collection::object(std::string name) {
 	return (*Collection_items)[name];
 };
-
-UI* UI_collection::object(int number) {
-	return (*Collection_itemOrder)[number];
-};
-
-int UI_collection::objects() {
-	return (*Collection_itemOrder).size();
-};
