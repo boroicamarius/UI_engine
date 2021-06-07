@@ -56,3 +56,7 @@ UI* UI_window::object(std::string name) {
 UI* UI_window::object(int number) {
 	return (*itemOrder)[number];
 };
+
+int UI_window::objects() {
+	return (*itemOrder).size();
+};

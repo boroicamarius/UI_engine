@@ -34,8 +34,8 @@ public:
 	void increaseHeight(float percent); 
 
 	UI* object(std::string name);
-
 	UI* object(int number);
+	int objects();
 
 	void addWithCustomName(std::string name, UI* ui) {
 		if (!ui->used) {
