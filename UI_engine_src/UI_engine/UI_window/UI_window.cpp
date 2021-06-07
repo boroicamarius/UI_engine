@@ -52,3 +52,7 @@ void UI_window::background(SDL_Color c) {
 UI* UI_window::object(std::string name) {
 	return (*items)[name];
 };
+
+UI* UI_window::object(int number) {
+	return (*itemOrder)[number];
+};

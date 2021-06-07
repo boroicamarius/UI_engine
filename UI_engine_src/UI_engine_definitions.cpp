@@ -12,9 +12,7 @@ namespace UI_engine {
 
 		SDL_Event _event;
 
-
 		while (uiWindow->status()!=stopped) {
-
 			uiWindow->update_framerate();
 
 			if (uiWindow->framerate_limit())
@@ -30,6 +28,7 @@ namespace UI_engine {
 				}
 
 			}
+
 		}
 	};
 }

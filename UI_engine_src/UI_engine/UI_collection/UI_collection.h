@@ -35,6 +35,8 @@ public:
 
 	UI* object(std::string name);
 
+	UI* object(int number);
+
 	void addWithCustomName(std::string name, UI* ui) {
 		if (!ui->used) {
 			ui->parent = this;

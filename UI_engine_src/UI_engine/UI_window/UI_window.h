@@ -77,6 +77,7 @@ public:
 	void background(SDL_Color c);
 
 	UI* object(std::string name);
+	UI* object(int number);
 
 	void addWithCustomName(std::string name,UI* ui) {
 		if (!ui->used) {
@@ -94,6 +95,7 @@ public:
 
 	#define add(x) addWithCustomName(#x,x)
 	void render() {
+
 		SDL_SetRenderDrawColor(_renderer, backgroundColor.r, backgroundColor.g, backgroundColor.b, backgroundColor.a);
 		SDL_RenderClear(_renderer);
 
@@ -144,7 +146,6 @@ public:
 	};
 
 	void execute_sdlEvents(const SDL_Event& e) {
-
 		switch (e.type) {
 		case SDL_WINDOWEVENT:
 			switch (e.window.event) {
