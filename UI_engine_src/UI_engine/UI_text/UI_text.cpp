@@ -92,7 +92,7 @@ SDL_Color* UI_text::color() {
 void UI_text::font(const char* _path,int _size) {
 	TTF_CloseFont(textFont);
 
-	TTF_OpenFont(_path, _size)
+	TTF_OpenFont(_path, _size);
 	SDL_Surface* textSurface = TTF_RenderText_Blended(textFont, _text.c_str(), *textColor);
 	textTexture = SDL_CreateTextureFromSurface(_renderer, textSurface);
 	
