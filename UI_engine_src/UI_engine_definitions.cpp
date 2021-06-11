@@ -19,13 +19,13 @@ namespace UI_engine {
 			{
 				uiWindow->finish_framerate();
 
-				uiWindow->render();
-
-				if (SDL_PollEvent(&_event)) {
+				while (SDL_PollEvent(&_event)) {
 
 					uiWindow->execute_sdlEvents(_event);
 
 				}
+
+				uiWindow->render();
 
 			}
 
