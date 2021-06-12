@@ -61,21 +61,41 @@ public:
 	#define add(x) addWithCustomName(#x,x)
 
 	virtual float width() override {
+		float minX = 9999999.0f;
 		float maxWidth = 0.0f;
 
 		for (auto& ui : *Collection_itemOrder) {
 			maxWidth = std::max(maxWidth, ui->width() + ui->x());
+			minX = std::min(minX, ui->x());
 		}
-		return maxWidth;
+
+		switch ((int)minX) {
+		case 9999999:
+			return 0.0f;
+			break;
+		default:
+			return abs(minX) + maxWidth;
+		}
+		
 	};
 
 	virtual float height() override {
+		float minY = 9999999.0f;
 		float maxHeight = 0.0f;
 
 		for (auto& ui : *Collection_itemOrder) {
 			maxHeight = std::max(maxHeight, ui->height() + ui->y());
+			minY = std::min(minY,ui->y());
 		}
-		return maxHeight;
+		
+		switch ((int)minY) {
+		case 9999999:
+			return 0.0f;
+			break;
+		default:
+			return abs(minY)+maxHeight;
+		}
+
 	};
 
 	virtual void destroy() override {

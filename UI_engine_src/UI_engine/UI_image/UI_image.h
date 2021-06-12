@@ -19,7 +19,6 @@ public:
 
 	~UI_image();
 
-	void source(SDL_Texture* _imageTexture);
 	void source(SDL_Surface* _imageSurface);
 	SDL_Texture* source();
 
@@ -38,13 +37,15 @@ public:
 
 	virtual void destroy() override {
 		finit();
-		SDL_DestroyTexture(image);
+		if(textureCreatedByItself)
+			SDL_DestroyTexture(image);
 		renderSection = NULL;
 	};
 
 private:
 	SDL_Texture *image;
 	SDL_Rect* renderSection;
+	bool textureCreatedByItself = false;
 };
 
 #endif

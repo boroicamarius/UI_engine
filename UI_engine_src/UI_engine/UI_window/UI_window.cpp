@@ -1,4 +1,4 @@
-#include "UI_Window.h"
+#include "UI_window.h"
 
 int UI_window::width() {
 	return windowInterface->w;
@@ -51,10 +51,6 @@ void UI_window::background(SDL_Color c) {
 
 UI* UI_window::object(std::string name) {
 	return (*items)[name];
-};
-
-UI* UI_window::object(int number) {
-	return (*itemOrder)[number];
 };
 
 int UI_window::objects() {

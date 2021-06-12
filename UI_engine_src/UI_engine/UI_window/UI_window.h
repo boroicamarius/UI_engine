@@ -77,7 +77,10 @@ public:
 	void background(SDL_Color c);
 
 	UI* object(std::string name);
-	UI* object(int number);
+
+	UI* object(int number) {
+		return (*itemOrder)[number];
+	};
 
 	int objects();
 

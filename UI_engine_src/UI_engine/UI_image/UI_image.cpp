@@ -1,4 +1,4 @@
-#include "UI_Image.h"
+#include "UI_image.h"
 #include "../Globals/Globals.h"
 
 #include <stdio.h>
@@ -26,22 +26,18 @@ UI_image::~UI_image() {
 
 };
 
-void UI_image::source(SDL_Texture* _imageTexture) {
-	SDL_DestroyTexture(image);
-	image = _imageTexture; 
-	if (image == NULL)
-		printf(SDL_GetError());
-
-	transparency(transparencyVal);
-};
-
 void UI_image::source(SDL_Surface* _imageSurface) {
-	SDL_DestroyTexture(image);
+	if (this->textureCreatedByItself) {
+		SDL_DestroyTexture(image);
+	}
+
 	image = SDL_CreateTextureFromSurface(_renderer, _imageSurface);
 	if (image == NULL)
 		printf(SDL_GetError());
 
 	transparency(transparencyVal);
+
+	textureCreatedByItself = true;
 };
 
 SDL_Texture* UI_image::source() {
