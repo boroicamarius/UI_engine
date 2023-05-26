@@ -1,4 +1,4 @@
-# ![UI_engine](https://github.com/boroicamarius/UI_engine/blob/main/docs/logo.png)
+# ![UI_engine](https://github.com/boroicamarius/UI_engine/blob/main/docs/logo_git.png)
 A simple to use engine for 2D user interface elements
 
 # Updates
