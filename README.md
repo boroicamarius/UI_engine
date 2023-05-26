@@ -1,4 +1,4 @@
-# ![UI_engine](https://github.com/boroicamarius/UI_engine/blob/main/docs/WebsiteLogo.png)
+# ![UI_engine](https://github.com/boroicamarius/UI_engine/blob/main/docs/logo.png)
 A simple to use engine for 2D user interface elements
 
 # Updates
@@ -15,7 +15,7 @@ A simple to use engine for 2D user interface elements
 
 [configuration](https://github.com/boroicamarius/UI_engine/tree/main#ui_engine-static-lib-configurationall-configurations)
 
-# UI_engine hello world example
+# UI_engine hello world example 
 ```cpp
 #include "SDL.h"
 #include "SDL_Image.h"
