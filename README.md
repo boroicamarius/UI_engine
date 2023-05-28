@@ -6,7 +6,7 @@ A simple to use engine for 2D user interface elements
 	-fixed texture scaling for UI_text when changing text
 
 # Documentation
-[UI_engine Documentation](https://boroicamarius.github.io/UI_engine/UI_engine_Docs.html)
+[UI_engine Documentation](https://boroicamarius.github.io/UI_engine/index.html)
 
 [Example](https://github.com/boroicamarius/UI_engine/tree/main#ui_engine-hello-world-example)
 # How-to-setup a UI_engine project
