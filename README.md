@@ -1,10 +1,6 @@
 # ![UI_engine](https://github.com/boroicamarius/UI_engine/blob/main/docs/logo_git.png)
-A simple to use engine for 2D user interface elements
-# Documentația Bibliotecii UI_engine
-
 ## Introducere
-
-Bine ați venit la documentația UI_engine! UI_engine este o bibliotecă statică C++ care permite dezvoltatorilor să creeze interfețe utilizator din codul C++ folosind SDL (Simple DirectMedia Layer). Această documentație vă va ghida prin configurarea bibliotecii, crearea unui proiect simplu și înțelegerea diferitelor componente ale codului.
+UI_engine este o bibliotecă statică C++ care permite dezvoltatorilor să creeze interfețe utilizator din codul C++ folosind SDL (Simple DirectMedia Layer). Această documentație vă va ghida prin configurarea bibliotecii, crearea unui proiect simplu și înțelegerea diferitelor componente ale codului.
 
 ## Cuprins
 
