@@ -14,6 +14,6 @@
     branch = release-2.20.x
 
 [submodule "SDL_mixer"]
-	path = external/SDL_ttf
+	path = external/SDL_mixer
 	url = https://github.com/libsdl-org/SDL_mixer.git
     branch = release-2.6.x
