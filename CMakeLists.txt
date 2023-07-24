@@ -44,35 +44,3 @@ PUBLIC
 	SDL2_ttf::SDL2_ttf
 	SDL2_mixer::SDL2_mixer
 )
-
-include(CMakePrintHelpers)
-
-cmake_print_variables(CMAKE_CURRENT_BINARY_DIR)
-cmake_print_variables(CMAKE_BINARY_DIR)
-
-file(COPY ${CMAKE_CURRENT_BINARY_DIR}/external/SDL/SDL2.dll
-DESTINATION ${CMAKE_BINARY_DIR})
-
-file(COPY ${CMAKE_CURRENT_BINARY_DIR}/external/SDL_image/SDL2_image.dll
-DESTINATION ${CMAKE_BINARY_DIR})
-
-file(COPY ${CMAKE_CURRENT_BINARY_DIR}/external/SDL_ttf/SDL2_ttf.dll
-DESTINATION ${CMAKE_BINARY_DIR})
-
-file(COPY ${CMAKE_CURRENT_BINARY_DIR}/external/SDL_mixer/SDL2_mixer.dll
-DESTINATION ${CMAKE_BINARY_DIR})
-
-file(COPY ${CMAKE_CURRENT_BINARY_DIR}/external/SDL_mixer/external/libmodplug/modplug.dll
-DESTINATION ${CMAKE_BINARY_DIR})
-
-file(COPY ${CMAKE_CURRENT_BINARY_DIR}/external/SDL_mixer/external/flac/src/libFLAC/FLAC.dll
-DESTINATION ${CMAKE_BINARY_DIR})
-
-file(COPY ${CMAKE_CURRENT_BINARY_DIR}/external/SDL_mixer/external/opusfile/opusfile.dll
-DESTINATION ${CMAKE_BINARY_DIR})
-
-file(COPY ${CMAKE_CURRENT_BINARY_DIR}/external/SDL_mixer/external/opus/opus.dll
-DESTINATION ${CMAKE_BINARY_DIR})
-
-file(COPY ${CMAKE_CURRENT_BINARY_DIR}/external/SDL_mixer/external/ogg/ogg.dll
-DESTINATION ${CMAKE_BINARY_DIR})
