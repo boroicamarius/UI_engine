@@ -27,7 +27,7 @@ Pentru a începe cu UI_engine, urmați acești pași:
 2. Clonați depozitul UI_engine de pe GitHub folosind următoarea comandă:
 
 ```bash
-git clone https://github.com/boroicamarius/UI_engine.git
+git clone --recurse-submodules https://github.com/boroicamarius/UI_engine.git
 ```
 
 3. Creați un fișier CMakeLists.txt în directorul rădăcină al proiectului cu următorul conținut:
